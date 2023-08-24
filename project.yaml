@@ -5,7 +5,7 @@ metadata:
 spec:
   params:
     default_image: giladsh28/llm:v3
-    with_gpu: true
+    with_gpu: false
   functions: []
   workflows: []
   artifacts: []
