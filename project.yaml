@@ -1,30 +1,18 @@
 kind: project
 metadata:
-  name: test-setup-6
+  name: test-setup
   created: '2023-08-23T21:40:56.983000'
 spec:
   params:
     default_image: giladsh28/llm:v3
     with_gpu: false
-  functions:
-  - url: https://raw.githubusercontent.com/GiladShapira94/functions/fix_fucntion_pii_qa/transcribe/function.yaml
-    name: transcribe
-  - url: https://raw.githubusercontent.com/GiladShapira94/functions/fix_fucntion_pii_qa/pii_recognizer/function.yaml
-    name: pii-recognizer
-  - url: https://raw.githubusercontent.com/GiladShapira94/functions/fix_fucntion_pii_qa/question_answering/function.yaml
-    name: question-answering
-  - url: ./postprocess.py
-    name: postprocess
-    kind: job
-  workflows:
-  - path: ./training_workflow.py
-    name: training_workflow
+  functions: []
+  workflows: []
   artifacts: []
   conda: ''
-  source: git://github.com/GiladShapira94/llm-project.git#refs/heads/master
-  origin_url: git://github.com/GiladShapira94/llm-project.git#refs/heads/master
+  source: ''
   desired_state: online
-  default_image: giladsh28/llm:v3
+  owner: gilads
   build:
     commands: []
     requirements: []
