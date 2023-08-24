@@ -22,7 +22,13 @@ def setup(project: mlrun.projects.MlrunProject):
     Creating the project for this demo.
     :returns: a fully prepared project for this demo.
     """
-    print(project.get_param("source"))
+    
+    # Set the project git source
+    source = project.get_param("source")
+    if source:
+        print(f"Project Source: {source}")
+        project.set_source(project.get_param("source"), pull_at_runtime=True)
+
     # Set or build the default image:
     if project.get_param("default_image") is None:
         print("not-image")
@@ -45,10 +51,6 @@ def setup(project: mlrun.projects.MlrunProject):
         # assert image_builder.deploy()
         # default_image = image_builder.spec.image
     project.set_default_image(project.get_param("default_image"))
-
-    # Set the project git source:
-
-    project.set_source(project.get_param("source"), pull_at_runtime=True)
 
     # Set the data collection function:
     transcribe_url = "https://raw.githubusercontent.com/GiladShapira94/functions/fix_fucntion_pii_qa/transcribe/function.yaml"
