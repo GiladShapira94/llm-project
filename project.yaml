@@ -1,0 +1,21 @@
+kind: project
+metadata:
+  name: test-setup
+  created: '2023-08-23T21:40:56.983000'
+spec:
+  params:
+    default_image: giladsh28/llm:v3
+    with_gpu: true
+  functions: []
+  workflows: []
+  artifacts: []
+  conda: ''
+  source: ''
+  desired_state: online
+  owner: gilads
+  build:
+    commands: []
+    requirements: []
+  custom_packagers: []
+status:
+  state: online
